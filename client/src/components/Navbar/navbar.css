@@ -25,7 +25,7 @@
 .left h1{
     font-family: 'Kaushan Script', cursive;
     font-weight: 600;
-    font-size:2.5rem;
+    font-size:2.8rem;
     letter-spacing: 0.8px;
     cursor: pointer;
 }
@@ -86,7 +86,7 @@
 
 /* REGISTER & LOGIN BUTTON */
 
-.btn{
+.nav-btn{
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
     background-color:black;
@@ -97,9 +97,115 @@
     transition: all 0.3s ease;
 }
 
-.btn:hover{
-    border: 2px solid var(--black);
-    background-color: var(--white);
-    color: var(--black);
+.nav-btn:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
 }
 
+/* RESPONSIVE NAVBAR */
+
+.nav-toggle{
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-toggle-list h1{
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+.nav-toggle-list{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+
+
+.nav-toggle{
+    z-index: 20;
+}
+
+.close{
+    color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width:992px){
+    .nav-container{
+     max-width: 800px;
+     margin: 1rem auto;
+    }
+
+    .btn{
+        padding: 0.8rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .right{
+        gap:0.6rem;
+    }
+
+    .center .center-list{
+        gap: 2rem;
+    }
+    
+    .center .center-list li{
+        font-size: 1.3rem;
+    }
+ }
+
+ @media(max-width:768px){
+    .nav-container{
+     max-width: 400px;
+     margin: 1rem auto;
+     justify-content: space-around;
+    }
+    
+    .right,.center{
+        display: none;
+    }
+
+    .nav-toggle{
+        display: block;
+    }
+    .nav-toggle-list.open{
+        display: flex;
+    }
+ }
+
+ @media(max-width:572px){
+    .nav-container{
+     max-width: 400px;
+     margin: 1rem auto;
+     justify-content: space-around;
+    }
+    
+    .right,.center{
+        display: none;
+    }
+
+    .nav-toggle{
+        display: block;
+    }
+    .nav-toggle-list.open{
+        display: flex;
+    }
+ }
